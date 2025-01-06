@@ -1,20 +1,21 @@
 /* ================
    Root Variables
    ================ */
-   :root {
-    --clr-bg: #1E3A8A;       /* Main background color */
+:root {
+    --clr-bg: #1E3A8A;
+    /* Main background color */
     --clr-bg-alt: #2a2f4c;
     --clr-fg: #D3D3D3;
     --clr-fg-alt: #cdcdff;
     --clr-primary: #D3D3D3;
     --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-              rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  }
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
 
-  /* ================
+/* ================
      Global Resets
      ================ */
-  * {
+* {
     padding: 0;
     margin: 0;
     border: 0;
@@ -25,71 +26,90 @@
     font-size: inherit;
     box-shadow: none;
     box-sizing: border-box;
-  }
+}
 
-  html {
+html {
     scroll-behavior: smooth;
-  }
+}
 
-  body {
+body {
     font-family: "Poppins", times;
     line-height: 1.5;
     color: var(--clr-fg);
     background-color: var(--clr-bg);
-  }
+}
 
-  h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     line-height: 1.2;
     color: var(--clr-fg-alt);
-  }
-  h1 { font-size: 4rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.5rem; }
-  h4 { font-size: 1.3rem; }
+}
 
-  ul {
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+ul {
     list-style-type: none;
-  }
-  a {
-    text-decoration: none;
-  }
-  button {
-    cursor: pointer;
-  }
+}
 
-  ::selection {
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+::selection {
     background: var(--clr-primary);
     color: var(--clr-bg);
-  }
+}
 
-  /* ======================
+/* ======================
      Links & Button Styles
      ====================== */
-  .link--nav {
+.link--nav {
     color: var(--clr-fg);
     text-transform: capitalize;
     font-weight: 500;
     letter-spacing: 1px;
     font-size: 1rem;
     transition: color 0.3s ease;
-  }
-  .link--nav:hover {
-    color: var(--clr-primary);
-  }
+}
 
-  .link--icon {
+.link--nav:hover {
+    color: var(--clr-primary);
+}
+
+.link--icon {
     color: var(--clr-fg);
     font-size: 2.5rem;
     margin-left: 5rem;
     margin-right: 5rem;
     transition: color 0.3s ease;
-  }
-  .link--icon:hover {
-    color: var(--clr-primary);
-  }
+}
 
-  /* ===== Outline Button ===== */
-  .btn--outline {
+.link--icon:hover {
+    color: var(--clr-primary);
+}
+
+/* ===== Outline Button ===== */
+.btn--outline {
     display: inline-block;
     padding: 0.8em 1.4em;
     font-weight: 500;
@@ -101,13 +121,16 @@
     position: relative;
     overflow: hidden;
     transition: color 0.3s, background-color 0.3s;
-    margin-bottom: 2em; /* adds space below each button if desired */
-  }
-  .btn--outline:hover {
+    margin-bottom: 2em;
+    /* adds space below each button if desired */
+}
+
+.btn--outline:hover {
     background-color: var(--clr-primary);
     color: var(--clr-bg);
-  }
-  .btn--outline::before {
+}
+
+.btn--outline::before {
     content: "";
     position: absolute;
     background-color: var(--clr-primary);
@@ -116,329 +139,375 @@
     left: 0;
     top: 0;
     transition: right 0.2s ease-in-out;
-  }
-  .btn--outline:hover::before {
+}
+
+.btn--outline:hover::before {
     right: 0;
-  }
+}
 
-  /* Container for multiple buttons side by side with spacing */
-  .btn-container {
+/* Container for multiple buttons side by side with spacing */
+.btn-container {
     display: flex;
-    gap: 1.5rem; /* Adjust horizontal spacing between buttons */
-  }
+    gap: 1.5rem;
+    /* Adjust horizontal spacing between buttons */
+}
 
-  /* ===== Plain Button ===== */
-  .btn--plain {
+/* ===== Plain Button ===== */
+.btn--plain {
     display: inline-block;
     text-transform: initial;
     background-color: var(--clr-bg-alt);
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
     padding: 0.5em 1em;
     transition: transform 0.2s;
-  }
-  .btn--plain:hover {
-    transform: translateY(-4px);
-  }
+}
 
-  /* ===== Icon Button ===== */
-  .btn--icon {
+.btn--plain:hover {
+    transform: translateY(-4px);
+}
+
+/* ===== Icon Button ===== */
+.btn--icon {
     background: none;
     border: none;
     font-size: 1.2rem;
     margin-left: 1em;
     color: var(--clr-fg);
-  }
-  .btn--icon:hover {
-    color: var(--clr-primary);
-  }
+}
 
-  /* ================
+.btn--icon:hover {
+    color: var(--clr-primary);
+}
+
+/* ================
      Header & Nav
      ================ */
-  .center {
+.center {
     display: flex;
     align-items: center;
-  }
+}
 
-  .header {
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--clr-bg);
     padding: 1rem 1rem;
-  }
+}
 
-  .nav {
+.nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* So we can position the hamburger if needed */
+    position: relative;
+    /* So we can position the hamburger if needed */
     width: 100%;
-  }
+}
 
-  .nav__list {
+.nav__list {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5em;
-  }
+}
 
-  /* Hamburger hidden on desktop, shown on mobile */
-  .nav__hamburger {
+/* Hamburger hidden on desktop, shown on mobile */
+.nav__hamburger {
     display: none;
     position: absolute;
     right: 2rem;
     font-size: 1.5rem;
     color: var(--clr-fg);
-  }
+}
 
-  /* Mobile Menu */
-  @media (max-width: 768px) {
+/* Mobile Menu */
+@media (max-width: 768px) {
     .nav__hamburger {
-      display: block; /* Show the hamburger on smaller screens */
+        display: block;
+        /* Show the hamburger on smaller screens */
     }
 
     .nav__list {
-      display: none;
-      flex-direction: column;
-      background-color: var(--clr-bg-alt);
-      position: absolute;
-      top: 5em;
-      left: 0;
-      right: 0;
-      padding: 1em;
+        display: none;
+        flex-direction: column;
+        background-color: var(--clr-bg-alt);
+        position: absolute;
+        top: 5em;
+        left: 0;
+        right: 0;
+        padding: 1em;
     }
-    .nav__list.display-nav-list {
-      display: flex;
-    }
-  }
 
-  /* ================
+    .nav__list.display-nav-list {
+        display: flex;
+    }
+}
+
+/* ================
      Sections
      ================ */
-  .section {
+.section {
     max-width: 1100px;
     width: 95%;
     margin: 4em auto;
-    padding-top: 0;     /* Adjust if you need top padding */
-    padding-bottom: 0;  /* Adjust if you need bottom padding */
-  }
+    padding-top: 0;
+    /* Adjust if you need top padding */
+    padding-bottom: 0;
+    /* Adjust if you need bottom padding */
+}
 
-  .section__title {
+.section__title {
     text-align: center;
     margin-bottom: 1em;
     text-transform: uppercase;
-  }
+}
 
-  /* =================
+/* =================
      About Section
      ================= */
-  .about {
-    display: flex;               /* two-column layout: .about__content & .about__image */
+.about {
+    display: flex;
+    /* two-column layout: .about__content & .about__image */
     justify-content: space-between;
     align-items: center;
     max-width: 1100px;
     margin: 4em auto;
-    padding: 2em;       /* internal spacing in the about section container */
+    padding: 2em;
+    /* internal spacing in the about section container */
     gap: 2em;
-  }
+}
 
-  .about__content {
+.about__content {
     flex: 1;
-  }
-  .about__content h1 {
+}
+
+.about__content h1 {
     font-size: 4rem;
     margin-bottom: 0.5em;
-  }
-  .about__content h3 {
+}
+
+.about__content h3 {
     font-size: 1.5rem;
     margin-bottom: 1em;
-    padding-bottom: 1rem; /* adds extra space below the H3 if desired */
-  }
-  .about__name {
+    padding-bottom: 1rem;
+    /* adds extra space below the H3 if desired */
+}
+
+.about__name {
     color: var(--clr-primary);
-  }
-  .about__desc {
+}
+
+.about__desc {
     font-size: 1rem;
     max-width: 600px;
     margin-top: 1em;
     margin-bottom: 2em;
     line-height: 1.6;
-  }
-  .about__contact {
-    margin-top: 2.4em;
-  }
+}
 
-  /* The image column */
-  .about__image {
+.about__contact {
+    margin-top: 2.4em;
+}
+
+/* The image column */
+.about__image {
     flex: 1;
     display: flex;
     justify-content: center;
-  }
-  .about__image img {
+}
+
+.about__image img {
     max-width: 400px;
     width: 100%;
     border-radius: 0.5em;
     object-fit: cover;
-  }
+}
 
-  /* Mobile responsiveness for the about section */
-  @media (max-width: 768px) {
+/* Mobile responsiveness for the about section */
+@media (max-width: 768px) {
     .about {
-      flex-direction: column;
-      text-align: center;
+        flex-direction: column;
+        text-align: center;
     }
-    .about__image {
-      margin-top: 2em;
-    }
-  }
 
-  /* ===============
+    .about__image {
+        margin-top: 2em;
+    }
+}
+
+/* ===============
      Projects Section
      =============== */
-  /* Projects grid layout */
-  .projects__grid {
+/* Projects grid layout */
+.projects__grid {
     display: grid;
     gap: 2em;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     max-width: 1100px;
     margin: 2em auto;
-  }
+}
 
-  /* Each project card */
-  .project {
-    position: relative;   /* so the overlay can be absolutely positioned */
-    overflow: hidden;     /* ensures no scrollbars if overlay extends */
-    cursor: pointer;      /* indicates it’s interactive on hover */
+/* Each project card */
+.project {
+    position: relative;
+    /* so the overlay can be absolutely positioned */
+    overflow: hidden;
+    /* ensures no scrollbars if overlay extends */
+    cursor: pointer;
+    /* indicates it’s interactive on hover */
     transition: transform 0.2s ease;
-  }
-  .project:hover {
-    transform: translateY(-5px); /* small lift effect on hover if desired */
-  }
+}
 
-  /* The project image */
-  .project__img {
+.project:hover {
+    transform: translateY(-5px);
+    /* small lift effect on hover if desired */
+}
+
+/* The project image */
+.project__img {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 0.5em; /* optional rounding */
-    object-fit: cover;    /* ensures good aspect ratio if forced sizing */
-  }
+    border-radius: 0.5em;
+    /* optional rounding */
+    object-fit: cover;
+    /* ensures good aspect ratio if forced sizing */
+}
 
-  /* The overlay that shows the text & links on hover */
-  .project__overlay {
+/* The overlay that shows the text & links on hover */
+.project__overlay {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
-    flex-direction: column;    /* stack title, desc, link vertically */
+    flex-direction: column;
+    /* stack title, desc, link vertically */
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.7); /* translucent black overlay */
-    color: #fff;              /* white text */
-    opacity: 0;               /* hidden by default */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* translucent black overlay */
+    color: #fff;
+    /* white text */
+    opacity: 0;
+    /* hidden by default */
     transition: opacity 0.3s ease;
-    padding: 1em;             /* spacing inside the overlay */
-    text-align: center;       /* center the text */
-  }
+    padding: 1em;
+    /* spacing inside the overlay */
+    text-align: center;
+    /* center the text */
+}
 
-  /* On hover, fade in the overlay */
-  .project:hover .project__overlay {
+/* On hover, fade in the overlay */
+.project:hover .project__overlay {
     opacity: 1;
-  }
+}
 
-  /* Title & paragraph within the overlay */
-  .project__overlay h3 {
+/* Title & paragraph within the overlay */
+.project__overlay h3 {
     margin-bottom: 0.5em;
     font-size: 1.4rem;
-  }
-  .project__overlay p {
+}
+
+.project__overlay p {
     margin-bottom: 1em;
     font-size: 1rem;
     line-height: 1.4;
-  }
+}
 
-  /* GitHub icon link within overlay */
-  .project__overlay .link--icon {
+/* GitHub icon link within overlay */
+.project__overlay .link--icon {
     font-size: 1.5rem;
     margin-top: 0.5em;
     color: #fff;
     transition: color 0.3s;
-  }
-  .project__overlay .link--icon:hover {
-    color: #ccc; /* or your chosen highlight color */
-  }
+}
 
-  .project__description {
+.project__overlay .link--icon:hover {
+    color: #ccc;
+    /* or your chosen highlight color */
+}
+
+.project__description {
     margin-top: 1em;
-  }
-  .project__stack {
+}
+
+.project__stack {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 1.2em 0;
-  }
-  .project__stack-item {
+}
+
+.project__stack-item {
     margin: 0.5em;
     font-weight: 500;
     font-size: 0.8rem;
     color: var(--clr-fg-alt);
-  }
-  .project__links .link--icon {
-    margin: 0em;
-  }
+}
 
-  /* ===============
+.project__links .link--icon {
+    margin: 0em;
+}
+
+/* ===============
      Skills Section
      =============== */
-  .skills__list {
+.skills__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     max-width: 450px;
     margin: 0 auto;
-  }
-  .skills__list-item {
+}
+
+.skills__list-item {
     margin: 0.5em;
     background-color: #212544;
-  }
+}
 
-  /* ===============
+/* ===============
      Contact Section
      =============== */
-  .contact {
+.contact {
     flex-direction: column;
-  }
+}
 
-  /* ===============
+/* ===============
      Footer
      =============== */
-  .footer {
+.footer {
     background-color: var(--clr-bg-alt);
     text-align: center;
     padding: 2em 1em;
     margin-top: 2em;
-  }
-  .footer__icons {
+}
+
+.footer__icons {
     margin-bottom: 1em;
-  }
-  .footer__icon {
+}
+
+.footer__icon {
     color: var(--clr-fg);
     font-size: 3rem;
     margin: 0 0.5em;
     transition: color 0.3s;
-  }
-  .footer__icon:hover {
+}
+
+.footer__icon:hover {
     color: var(--clr-primary);
-  }
-  .footer__text {
+}
+
+.footer__text {
     color: var(--clr-fg);
     font-size: 1rem;
-  }
+}
 
-  /* ===============
+/* ===============
      Scroll-to-Top
      =============== */
-  .scroll-top {
+.scroll-top {
     display: none;
     position: fixed;
     bottom: 1em;
@@ -447,44 +516,50 @@
     font-size: 1.8rem;
     cursor: pointer;
     transition: transform 0.2s;
-  }
-  .scroll-top:hover {
+}
+
+.scroll-top:hover {
     filter: brightness(1.1);
     transform: translateY(-4px);
-  }
+}
 
-  /* ===============
+/* ===============
      Smaller Devices
      =============== */
-  @media (max-width: 600px) {
+@media (max-width: 600px) {
     .header {
-      height: auto;
+        height: auto;
     }
-    .section {
-      margin-top: 4em;
-    }
-    .about {
-      margin-top: 2em;
-    }
-    .footer {
-      margin-top: 3em;
-      padding: 2em;
-    }
-  }
 
-  /* ====================
+    .section {
+        margin-top: 4em;
+    }
+
+    .about {
+        margin-top: 2em;
+    }
+
+    .footer {
+        margin-top: 3em;
+        padding: 2em;
+    }
+}
+
+/* ====================
      About-Page Template
      ==================== */
-  .about-page {
+.about-page {
     max-width: 1100px;
     margin: 4em auto;
     padding: 2em;
-  }
-  .about-page__title {
+}
+
+.about-page__title {
     text-align: center;
     margin-bottom: 2em;
-  }
-  .about-page__container {
+}
+
+.about-page__container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -492,87 +567,102 @@
     max-width: 1100px;
     margin: 4em auto;
     padding: 2em;
-  }
-  .about-page__image {
+}
+
+.about-page__image {
     flex: 1;
     display: flex;
     justify-content: center;
-  }
-  .about-page__image img {
+}
+
+.about-page__image img {
     max-width: 300px;
     width: 100%;
     border-radius: 0.5em;
     object-fit: cover;
-  }
-  .about-page__text {
+}
+
+.about-page__text {
     flex: 1;
     max-width: 500px;
     line-height: 1.6;
     text-align: left;
-  }
+}
 
-  /* Stack on mobile */
-  @media (max-width: 768px) {
+/* Stack on mobile */
+@media (max-width: 768px) {
     .about-page__container {
-      flex-direction: column;
-      text-align: center;
+        flex-direction: column;
+        text-align: center;
     }
-    .about-page__image {
-      margin-bottom: 2em;
-    }
-  }
 
-  /* Modal (hidden by default) */
+    .about-page__image {
+        margin-bottom: 2em;
+    }
+}
+
+/* Modal (hidden by default) */
 .modal {
-  position: fixed;           /* stays in one place */
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
-  display: none;             /* hidden by default */
-  align-items: center;       /* center the content vertically */
-  justify-content: center;   /* center the content horizontally */
-  z-index: 9999;            /* ensure it's on top of other elements */
+    position: fixed;
+    /* stays in one place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* semi-transparent background */
+    display: none;
+    /* hidden by default */
+    align-items: center;
+    /* center the content vertically */
+    justify-content: center;
+    /* center the content horizontally */
+    z-index: 9999;
+    /* ensure it's on top of other elements */
 }
 
 /* When we want to show it, we add a class .show-modal, for instance */
 .modal.show-modal {
-  display: flex;
+    display: flex;
 }
 
 /* Modal Content Box */
 .modal-content {
-  background-color: #fff;     /* white background */
-  color: #000;                /* black text for readability */
-  padding: 2em;
-  border-radius: 0.5em;
-  max-width: 500px;
-  width: 90%;                 /* near full width on mobile */
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
-  position: relative;
+    background-color: #fff;
+    /* white background */
+    color: #000;
+    /* black text for readability */
+    padding: 2em;
+    border-radius: 0.5em;
+    max-width: 500px;
+    width: 90%;
+    /* near full width on mobile */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 /* Close (X) Button */
 .modal-close {
-  position: absolute;
-  top: 0.5em;
-  right: 0.7em;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #000;
+    position: absolute;
+    top: 0.5em;
+    right: 0.7em;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #000;
 }
 
 .modal-close:hover {
-  color: #888; /* or any hover color */
+    color: #888;
+    /* or any hover color */
 }
 
 /* Title & Paragraph styling in the modal */
 #modal-skill-name {
-  margin-bottom: 1em;
-  font-size: 1.5rem;
-  font-weight: 600;
+    margin-bottom: 1em;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 #modal-skill-info {
-  line-height: 1.6;
+    line-height: 1.6;
 }
-
