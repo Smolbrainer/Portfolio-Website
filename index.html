@@ -157,9 +157,23 @@
             </section>
 
             <!-- Contact Section -->
-            <section id="contact" class="section contact center">
-                <h2 class="section__title">Contact</h2>
-                <a href="mailto:ybehiri@uwaterloo.ca" class="btn--outline">Email Me</a>
+            <section id="contact" class="contact-section">
+                <h2 class="contact-section__title">Contact</h2>
+
+                <div class="contact-form-container">
+                    <!-- Form sending data to Formspree endpoint -->
+                    <form class="contact-form" action="https://formspree.io/f/xnnnogkr" method="POST">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" />
+
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" placeholder="example@domain.com" required />
+
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Hi! I'd love to get in touch..." required></textarea>
+                        <button type="submit" class="contact-form__button">Send</button>
+                    </form>
+                </div>
             </section>
         </main>
 
