@@ -1,0 +1,113 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="About Me - Yasen Behiri" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="faviconv1.png" />
+  <title>About Me | Yasen Behiri</title>
+</head>
+<body>
+
+  <!-- Header (exactly the same as index.html) -->
+  <header class="header">
+    <nav class="nav">
+
+      <!-- Left side: LinkedIn -->
+      <div class="nav__left">
+        <a href="https://linkedin.com/in/yasenbehiri" target="_blank" class="link--icon" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+
+      <!-- Center: Navigation Links -->
+      <ul class="nav__list">
+        <!-- 'About' now points to about.html itself -->
+        <li class="nav__list-item"><a href="about.html" class="link--nav">About</a></li>
+        <!-- These links go back to sections on index.html -->
+        <li class="nav__list-item"><a href="index.html#skills" class="link--nav">Skills</a></li>
+        <li class="nav__list-item"><a href="index.html#projects" class="link--nav">Projects</a></li>
+        <li class="nav__list-item"><a href="index.html#contact" class="link--nav">Contact</a></li>
+      </ul>
+
+      <!-- Right side: GitHub -->
+      <div class="nav__right">
+        <a href="https://github.com/Smolbrainer" target="_blank" class="link--icon" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <!-- Hamburger for mobile (optional) -->
+        <button class="btn--icon nav__hamburger" aria-label="Toggle Navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+    </nav>
+  </header>
+  <!-- End Header -->
+
+  <main>
+    <!-- About Me Section -->
+    <section class="about-page">
+      <!-- Centered heading -->
+      <h1 class="about-page__title">About Me</h1>
+
+      <!-- Container with left image & right text -->
+      <div class="about-page__container">
+        <div class="about-page__image">
+          <!-- Replace with your actual image path -->
+          <img src="images/my-photo.jpg" alt="Yasen Behiri Profile" />
+        </div>
+        <div class="about-page__text">
+          <p>
+            Hello! I’m Yasen Behiri, a Civil Engineering student at the University
+            of Waterloo. I’m driven to challenge myself, build innovative solutions,
+            and make a lasting impact in the field. When I’m not hitting the books or
+            coding, you can find me exploring new technologies and pushing boundaries
+            to create meaningful projects.
+          </p>
+          <p>
+            My background in engineering has taught me the importance of rigorous
+            problem-solving, attention to detail, and collaboration. I’m constantly
+            looking for new opportunities to expand my skills and bring ideas to life.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Same Footer as index.html -->
+  <footer class="footer">
+    <div class="footer__icons">
+      <a
+        href="https://linkedin.com/in/yasenbehiri"
+        target="_blank"
+        aria-label="LinkedIn"
+        class="footer__icon"
+      >
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a
+        href="https://github.com/Smolbrainer"
+        target="_blank"
+        aria-label="GitHub"
+        class="footer__icon"
+      >
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <p class="footer__text">&copy; 2025 Yasen Behiri. All rights reserved.</p>
+  </footer>
+
+  <!-- Same script (optional) -->
+  <script src="script.js"></script>
+</body>
+</html>

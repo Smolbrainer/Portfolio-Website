@@ -23,7 +23,7 @@ scrollButton.addEventListener('click', () => {
 // =======================
 // Letter-by-Letter Typing
 // =======================
-const messages = ['Building...', 'Learning...', 'Growing...'];
+const messages = ['Builder...', 'Learner...', 'Creator...'];
 let messageIndex = 0;   // Which message (word/phrase) we're on
 let charIndex = 0;      // Which character of the message we're on
 let isDeleting = false; // State: typing or deleting?
@@ -64,3 +64,39 @@ function typeEffect() {
 
 // Immediately start the typing effect on page load
 typeEffect();
+
+
+// Get elements
+const skillItems = document.querySelectorAll('.skill-item'); // all skill <li>
+const skillModal = document.getElementById('skill-modal');
+const modalSkillName = document.getElementById('modal-skill-name');
+const modalSkillInfo = document.getElementById('modal-skill-info');
+const modalCloseBtn = document.getElementById('skill-modal-close');
+
+// For each skill <li>, add a click event
+skillItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    // 1) Retrieve data from the skill's data-attributes
+    const name = item.getAttribute('data-skill-name');
+    const info = item.getAttribute('data-skill-info');
+
+    // 2) Insert that info into the modal's placeholders
+    modalSkillName.textContent = name;
+    modalSkillInfo.textContent = info;
+
+    // 3) Show the modal
+    skillModal.classList.add('show-modal');
+  });
+});
+
+// Close the modal when X is clicked
+modalCloseBtn.addEventListener('click', () => {
+  skillModal.classList.remove('show-modal');
+});
+
+// Optionally close the modal if user clicks outside the content box
+skillModal.addEventListener('click', (e) => {
+  if (e.target === skillModal) {
+    skillModal.classList.remove('show-modal');
+  }
+});
