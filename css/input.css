@@ -1,0 +1,153 @@
+/* -- Tailwind layers ---------------------------------------------- */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* -- Your custom rules ------------------------------------------- */
+/* custom scrollbar */
+@layer base {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.accent') theme('colors.gray.800');
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #02c8ff;
+    border-radius: 9999px;
+  }
+}
+
+/* Component classes */
+@layer components {
+  /* Navbar */
+  .navbar {
+    @apply sticky top-0 z-50 bg-gray-900/80 backdrop-blur shadow-sm;
+  }
+  .nav-container {
+    @apply mx-auto flex max-w-6xl items-center justify-between px-4 py-3;
+  }
+  .nav-logo {
+    @apply flex items-center gap-2;
+  }
+  .nav-links {
+    @apply hidden gap-8 text-sm font-medium md:flex;
+  }
+  .nav-link {
+    @apply hover:text-accent transition-colors;
+  }
+  .avatar {
+    @apply h-8 w-8 rounded-full;
+  }
+  .menu-button {
+    @apply rounded-md p-2 hover:bg-gray-800/60 md:hidden transition-colors;
+  }
+
+  /* Hero Section */
+  .hero {
+    @apply mx-auto flex max-w-4xl flex-col items-center gap-4 px-6 py-24 text-center;
+  }
+  .hero-title {
+    @apply text-4xl font-extrabold tracking-tight md:text-6xl;
+  }
+  .hero-subtitle {
+    @apply text-3xl font-bold text-accent md:text-5xl;
+  }
+  .hero-description {
+    @apply mt-4 text-lg md:text-xl text-gray-300;
+  }
+  .hero-cta {
+    @apply relative mt-8 flex flex-col items-center gap-3;
+  }
+  .hero-button {
+    @apply rounded-full bg-accent px-8 py-3 text-lg font-semibold text-gray-900 shadow-md hover:bg-accent/90 transition-colors;
+  }
+
+  /* Section Headers */
+  .section-header {
+    @apply mb-6 flex items-center gap-4 text-xl font-semibold uppercase tracking-widest text-gray-400 justify-start;
+  }
+  .section-title {
+    @apply font-bold text-left text-gray-100;
+  }
+  .section-divider {
+    @apply flex-1 border-t border-gray-700 ml-4;
+  }
+  .section-paragraph {
+    @apply text-lg leading-relaxed text-gray-200;
+  }
+
+  /* Experience Section */
+  .exp-filters {
+    @apply mb-8 flex flex-wrap gap-3 text-sm font-medium justify-center;
+  }
+  .filter-btn {
+    @apply rounded-full border border-gray-600 px-4 py-1.5 transition-colors hover:border-accent hover:text-accent;
+  }
+  .exp-item {
+    @apply rounded-xl bg-gray-800 p-6 shadow-md transition-colors hover:border-accent hover:shadow-lg;
+  }
+  .experience-item-header {
+    @apply flex items-center justify-between;
+  }
+  .experience-item-logo-container {
+    @apply flex items-center gap-3;
+  }
+  .experience-item-title {
+    @apply text-lg font-semibold;
+  }
+  .experience-item-date {
+    @apply text-sm text-gray-400;
+  }
+  .experience-item-description {
+    @apply mt-1 text-sm text-gray-300;
+  }
+
+  /* Projects Section */
+  .project-card {
+    @apply relative overflow-hidden rounded-lg shadow-lg shadow-gray-800/40 transition hover:shadow-xl;
+  }
+  .project-image {
+    @apply h-56 w-full object-cover transition duration-300 group-hover:scale-105;
+  }
+  .project-overlay {
+    @apply absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gray-900/80 opacity-0 transition group-hover:opacity-100;
+  }
+  .project-tag {
+    @apply rounded-full bg-accent px-2 py-0.5 text-gray-900;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    @apply bg-gray-800 py-20;
+  }
+  .contact-container {
+    @apply mx-auto max-w-xl px-6 text-center rounded-lg border border-gray-700 p-8 shadow-xl;
+  }
+  .contact-form {
+    @apply mt-8 space-y-4;
+  }
+  .form-input {
+    @apply w-full rounded-md bg-gray-900/60 px-4 py-3 text-gray-100 placeholder-gray-500 focus:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-accent;
+  }
+  .submit-button {
+    @apply w-full rounded-md bg-accent py-3 font-semibold text-gray-900 hover:bg-accent/90 transition-colors;
+  }
+
+  /* Footer */
+  .footer {
+    @apply bg-gray-900 py-6 text-center text-sm text-gray-400;
+  }
+
+  /* Caret Animation */
+  .caret {
+    @apply text-accent;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
+}
