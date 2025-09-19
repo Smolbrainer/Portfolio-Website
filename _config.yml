@@ -1,0 +1,8 @@
+# Disable Jekyll processing
+include: []
+exclude: []
+keep_files: []
+safe: true
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
