@@ -6,10 +6,10 @@
   <title>hi, i'm yasen</title>
 
     <!-- SEO & Social -->
-  <meta name="description" content="i'm a software engineering student at the university of waterloo with an interest in building useful, scalable, and beautiful software. i also enjoy learning about finance, economics, and entrepreneurship in my spare time.">
+  <meta name="description" content="waterloo se student here, trying to build things that are practical, scale cleanly, and feel great to use. i also enjoy learning about finance, economics, and entrepreneurship in my spare time.">
   <meta property="og:title" content="hi, i'm yasen">
-  <meta property="og:description" content="i'm a software engineering student at the university of waterloo with an interest in building useful, scalable, and beautiful software. i also enjoy learning about finance, technology, and entrepreneurship in my spare time.">
-  <meta property="og:url" content="https://yasenbehiri.com">
+  <meta property="og:description" content="waterloo se student here, trying to build things that are practical, scale cleanly, and feel great to use. i also enjoy learning about finance, economics, and entrepreneurship in my spare time.">
+  <meta property="og:url" content="https://yasen.ca">
   <meta property="og:site_name" content="yasen behiri">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image" content="assets/profile_image.png">
@@ -17,8 +17,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="hey, i'm yasen">
-  <meta name="twitter:description" content="i'm a software engineering student at the university of waterloo with an interest in building useful, scalable, and beautiful software. i also enjoy learning about finance, technology, and entrepreneurship in my spare time.">
+  <meta name="twitter:title" content="hi, i'm yasen">
+  <meta name="twitter:description" content="waterloo se student here, trying to build things that are practical, scale cleanly, and feel great to use. i also enjoy learning about finance, economics, and entrepreneurship in my spare time.">
   <meta name="twitter:image" content="assets/profile_image.png">
   
   <link rel="icon" href="assets/profile_image.png" type="image/png">
@@ -75,7 +75,7 @@
           </h1>
           <div class="w-16 h-0.5 bg-accent mb-8 mx-auto"></div>
           <p class="text-lg md:text-xl font-geist mb-16 text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            i'm a <span class="text-accent font-medium">software engineering student</span> at the university of waterloo with an interest in building useful, scalable, and beautiful software. i also enjoy learning about finance, economics, and entrepreneurship in my spare time.
+            <span class="text-accent font-medium">waterloo se</span> student here, trying to build things that are practical, scale cleanly, and feel great to use. i also enjoy learning about finance, economics, and entrepreneurship in my spare time.
           </p>
         
         <h2 class="text-xl md:text-2xl font-geist mb-8 text-gray-200">
@@ -85,10 +85,12 @@
         <div class="space-y-4 w-full max-w-xs mx-auto font-geist mb-8">
           <!-- Savi Finance -->
           <div class="card-hover p-4 pb-6 rounded-lg bg-white/5 border border-white/10 hover:border-accent transition-colors max-w-xs mx-auto cursor-pointer" onclick="openModal('savi')">
-      <div class="text-center">
-              <div class="w-14 h-14 bg-white/10 rounded-lg mx-auto mb-2 p-3 flex items-center justify-center">
-                <img alt="savi finance logo" loading="lazy" width="40" height="40" decoding="async" class="w-10 h-10 object-contain" src="https://avatars.githubusercontent.com/u/19055535?s=200&v=4">
-      </div>
+            <div class="text-center">
+              <div class="w-36 h-36 md:w-40 md:h-40 bg-white/10 rounded-lg mx-auto mb-2 p-4 flex items-center justify-center">
+                <img alt="savi finance logo" loading="lazy" decoding="async"
+                    class="w-28 h-28 md:w-32 md:h-32 object-contain"
+                    src="https://avatars.githubusercontent.com/u/19055535?s=200&v=4">
+              </div>
               <h3 class="font-medium text-base text-gray-200 mb-0.5">savi finance</h3>
               <p class="text-accent text-sm mb-1">software engineering intern</p>
               <div class="text-gray-300 text-sm">may 2025 - august 2025</div>
@@ -98,16 +100,18 @@
           <!-- University of Waterloo -->
           <div class="card-hover p-4 pb-6 rounded-lg bg-white/5 border border-white/10 hover:border-accent transition-colors max-w-xs mx-auto cursor-pointer" onclick="openModal('waterloo')">
             <div class="text-center">
-              <div class="w-14 h-14 bg-white/10 rounded-lg mx-auto mb-2 p-3 flex items-center justify-center">
-                <img alt="university of waterloo logo" loading="lazy" width="40" height="40" decoding="async" class="w-10 h-10 object-contain" src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/University_of_Waterloo_seal.svg/250px-University_of_Waterloo_seal.svg.png">
+            <div class="w-36 h-36 md:w-40 md:h-40 bg-white/10 rounded-lg mx-auto mb-2 p-4 flex items-center justify-center">
+              <img alt="university of waterloo logo" loading="lazy" decoding="async"
+                  class="w-28 h-28 md:w-32 md:h-32 object-contain"
+                  src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/University_of_Waterloo_seal.svg/250px-University_of_Waterloo_seal.svg.png">
             </div>
               <h3 class="font-medium text-base text-gray-200 mb-0.5">university of waterloo</h3>
               <p class="text-accent text-sm mb-1">bachelor of software engineering</p>
-              <p class="text-accent text-sm mb-1">joint honours in computing & optimization</p>
+              <p class="text-accent text-sm mb-1">joint honours in computing &amp; optimization</p>
               <div class="text-gray-300 text-sm">sept 2025 - april 2030</div>
             </div>
           </div>
-      </div>
+        </div>
       
           </div>
     
@@ -202,7 +206,7 @@
         
         content.innerHTML = `
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-white/90 rounded-lg p-2 flex items-center justify-center">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-white/90 rounded-lg p-2 flex items-center justify-center">
               <img src="${modalData.logo}" alt="${modalData.company} logo" class="w-full h-full object-contain" style="color: transparent;">
             </div>
             <div>
