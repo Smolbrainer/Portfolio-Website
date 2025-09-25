@@ -141,11 +141,68 @@
       min-height: 100vh;
       background-color: #0f0f23;
     }
+
+    /* Custom height for very tall videos */
+    @media (min-width: 768px) {
+      .md\:h-128 {
+        height: 32rem;
+      }
+    }
     </style>
   </head>
 
 <body class="background-image text-gray-200 min-h-screen">
-  <div style="opacity: 1;">
+  <!-- Floating Background Videos -->
+  <div class="fixed inset-0 z-10 pointer-events-none overflow-hidden">
+    <!-- Left Floating Video (Minecraft) -->
+    <div id="leftVideo" class="absolute left-0 top-0 w-1/4 h-full overflow-hidden shadow-lg transition-all duration-300 pointer-events-none">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="w-full h-full object-cover opacity-30"
+        style="filter: blur(0.5px);"
+      >
+        <source src="assets/minecraft-video.mp4" type="video/mp4">
+        <!-- Fallback for browsers that don't support video -->
+      </video>
+    </div>
+
+    <!-- Right Floating Video (Subway) -->
+    <div id="rightVideo" class="absolute right-0 top-0 w-1/4 h-full overflow-hidden shadow-lg transition-all duration-300 pointer-events-none">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="w-full h-full object-cover opacity-30"
+        style="filter: blur(0.5px);"
+      >
+        <source src="assets/subway-video.mp4" type="video/mp4">
+        <!-- Fallback for browsers that don't support video -->
+      </video>
+    </div>
+  </div>
+
+  <!-- Separate layer for buttons -->
+  <div class="fixed inset-0 z-50 pointer-events-none">
+    <!-- Left Video Button -->
+    <button id="leftButton" class="absolute top-4 left-4 bg-black/70 hover:bg-black/90 rounded-full w-8 h-8 flex items-center justify-center transition-colors pointer-events-auto cursor-pointer">
+      <svg id="leftIcon" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+      </svg>
+    </button>
+
+    <!-- Right Video Button -->
+    <button id="rightButton" class="absolute top-4 right-4 bg-black/70 hover:bg-black/90 rounded-full w-8 h-8 flex items-center justify-center transition-colors pointer-events-auto cursor-pointer">
+      <svg id="rightIcon" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div style="opacity: 1;" class="relative z-20">
     <!-- Hero Section -->
     <div class="min-h-screen flex items-start justify-center relative pt-48 pb-20">
       <div class="w-full px-4 text-center">
@@ -462,6 +519,83 @@
       } else {
         window.animationController = new AnimationController();
       }
+
+      // Video Toggle Functionality
+      let leftVideoMinimized = false;
+      let rightVideoMinimized = false;
+
+      function toggleVideo(side) {
+        console.log('Toggle video called for:', side);
+        const video = document.getElementById(side + 'Video');
+        const icon = document.getElementById(side + 'Icon');
+
+        console.log('Video element:', video);
+        console.log('Icon element:', icon);
+
+        if (side === 'left') {
+          console.log('Left video minimized state:', leftVideoMinimized);
+          if (leftVideoMinimized) {
+            // Maximize
+            video.className = 'absolute left-0 top-0 w-1/4 h-full overflow-hidden shadow-lg transition-all duration-300 pointer-events-none';
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>';
+            leftVideoMinimized = false;
+            console.log('Maximized left video');
+          } else {
+            // Minimize
+            video.className = 'absolute left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 overflow-hidden shadow-lg transition-all duration-300 pointer-events-none rounded-lg';
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>';
+            leftVideoMinimized = true;
+            console.log('Minimized left video');
+          }
+        } else {
+          console.log('Right video minimized state:', rightVideoMinimized);
+          if (rightVideoMinimized) {
+            // Maximize
+            video.className = 'absolute right-0 top-0 w-1/4 h-full overflow-hidden shadow-lg transition-all duration-300 pointer-events-none';
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>';
+            rightVideoMinimized = false;
+            console.log('Maximized right video');
+          } else {
+            // Minimize
+            video.className = 'absolute right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 overflow-hidden shadow-lg transition-all duration-300 pointer-events-none rounded-lg';
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>';
+            rightVideoMinimized = true;
+            console.log('Minimized right video');
+          }
+        }
+      }
+
+      // Event listener approach with new button IDs
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, setting up button listeners');
+
+        // Add click listeners to separate buttons
+        const leftButton = document.getElementById('leftButton');
+        const rightButton = document.getElementById('rightButton');
+
+        console.log('Left button element:', leftButton);
+        console.log('Right button element:', rightButton);
+
+        if (leftButton) {
+          leftButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Left button clicked');
+            toggleVideo('left');
+          });
+          console.log('Left button listener added');
+        }
+
+        if (rightButton) {
+          rightButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Right button clicked');
+            toggleVideo('right');
+          });
+          console.log('Right button listener added');
+        }
+      });
     </script>
   </body>
 </html>
