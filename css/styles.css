@@ -2257,6 +2257,18 @@ html {
   padding-top: 0.75rem;
 }
 
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
+.pt-32 {
+  padding-top: 8rem;
+}
+
+.pt-48 {
+  padding-top: 12rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2464,6 +2476,10 @@ html {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-white\/50 {
+  color: rgb(255 255 255 / 0.5);
 }
 
 .underline {
@@ -2926,6 +2942,10 @@ html {
 .group:hover .group-hover\:text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity, 1));
+}
+
+.group:hover .group-hover\:text-white\/70 {
+  color: rgb(255 255 255 / 0.7);
 }
 
 @media (min-width: 640px) {
