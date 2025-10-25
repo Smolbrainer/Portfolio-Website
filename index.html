@@ -157,30 +157,38 @@
     <!-- Left Floating Video (Minecraft) -->
     <div id="leftVideo" class="absolute left-0 top-0 w-1/4 h-full overflow-hidden shadow-lg transition-all duration-300 pointer-events-none">
       <video
+        id="leftVideoElement"
         autoplay
         muted
         loop
         playsinline
+        preload="metadata"
+        webkit-playsinline
+        x5-playsinline
         class="w-full h-full object-cover opacity-30"
         style="filter: blur(0.5px);"
       >
         <source src="assets/minecraft-video.mp4" type="video/mp4">
-        <!-- Fallback for browsers that don't support video -->
+        Your browser does not support the video tag.
       </video>
     </div>
 
     <!-- Right Floating Video (Subway) -->
     <div id="rightVideo" class="absolute right-0 top-0 w-1/4 h-full overflow-hidden shadow-lg transition-all duration-300 pointer-events-none">
       <video
+        id="rightVideoElement"
         autoplay
         muted
         loop
         playsinline
+        preload="metadata"
+        webkit-playsinline
+        x5-playsinline
         class="w-full h-full object-cover opacity-30"
         style="filter: blur(0.5px);"
       >
         <source src="assets/subway-video.mp4" type="video/mp4">
-        <!-- Fallback for browsers that don't support video -->
+        Your browser does not support the video tag.
       </video>
     </div>
   </div>
@@ -188,14 +196,14 @@
   <!-- Separate layer for buttons -->
   <div class="fixed inset-0 z-50 pointer-events-none">
     <!-- Left Video Button -->
-    <button id="leftButton" class="absolute top-4 left-4 bg-black/70 hover:bg-black/90 rounded-full w-8 h-8 flex items-center justify-center transition-colors pointer-events-auto cursor-pointer">
+    <button id="leftButton" class="flex absolute top-4 left-4 bg-black/70 hover:bg-black/90 active:bg-black rounded-full w-8 h-8 items-center justify-center transition-colors pointer-events-auto cursor-pointer">
       <svg id="leftIcon" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
       </svg>
     </button>
 
     <!-- Right Video Button -->
-    <button id="rightButton" class="absolute top-4 right-4 bg-black/70 hover:bg-black/90 rounded-full w-8 h-8 flex items-center justify-center transition-colors pointer-events-auto cursor-pointer">
+    <button id="rightButton" class="flex absolute top-4 right-4 bg-black/70 hover:bg-black/90 active:bg-black rounded-full w-8 h-8 items-center justify-center transition-colors pointer-events-auto cursor-pointer">
       <svg id="rightIcon" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
       </svg>
@@ -565,9 +573,30 @@
         }
       }
 
+      // Force video playback on mobile
+      function forceVideoPlayback() {
+        const leftVideo = document.getElementById('leftVideoElement');
+        const rightVideo = document.getElementById('rightVideoElement');
+
+        if (leftVideo) {
+          leftVideo.play().catch(err => {
+            console.log('Left video autoplay prevented:', err);
+          });
+        }
+
+        if (rightVideo) {
+          rightVideo.play().catch(err => {
+            console.log('Right video autoplay prevented:', err);
+          });
+        }
+      }
+
       // Event listener approach with new button IDs
       document.addEventListener('DOMContentLoaded', function() {
         console.log('DOM loaded, setting up button listeners');
+
+        // Force video playback after a short delay
+        setTimeout(forceVideoPlayback, 100);
 
         // Add click listeners to separate buttons
         const leftButton = document.getElementById('leftButton');
@@ -595,6 +624,10 @@
           });
           console.log('Right button listener added');
         }
+
+        // Also try to play videos on any user interaction (helps with mobile restrictions)
+        document.body.addEventListener('touchstart', forceVideoPlayback, { once: true });
+        document.body.addEventListener('click', forceVideoPlayback, { once: true });
       });
     </script>
   </body>
