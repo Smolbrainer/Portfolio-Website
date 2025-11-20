@@ -228,8 +228,22 @@
       </h2>
         
         <div class="space-y-4 w-full max-w-xs mx-auto font-geist mb-8">
+          <!-- Hawala -->
+          <div class="card-hover p-4 pb-6 rounded-lg bg-white/5 border border-white/10 hover:border-accent transition-colors max-w-xs mx-auto cursor-pointer animate-element animate-stagger-5" onclick="openModal('hawala')">
+            <div class="text-center">
+              <div class="w-36 h-36 md:w-40 md:h-40 bg-white/10 rounded-lg mx-auto mb-2 p-4 flex items-center justify-center">
+                <img alt="hawala logo" loading="lazy" decoding="async"
+                    class="w-28 h-28 md:w-32 md:h-32 object-contain"
+                    src="assets/hawala.png">
+              </div>
+              <h3 class="font-medium text-base text-gray-200 mb-0.5">hawala</h3>
+              <p class="text-accent text-sm mb-1">incoming winter 2026</p>
+              <div class="text-gray-300 text-sm">january 2026 - present</div>
+            </div>
+          </div>
+
           <!-- WatStreet -->
-          <div class="card-hover p-4 pb-6 rounded-lg bg-white/5 border border-white/10 hover:border-accent transition-colors max-w-xs mx-auto cursor-pointer animate-element animate-stagger-5" onclick="openModal('watstreet')">
+          <div class="card-hover p-4 pb-6 rounded-lg bg-white/5 border border-white/10 hover:border-accent transition-colors max-w-xs mx-auto cursor-pointer animate-element animate-stagger-6" onclick="openModal('watstreet')">
             <div class="text-center">
               <div class="w-36 h-36 md:w-40 md:h-40 bg-white/10 rounded-lg mx-auto mb-2 p-4 flex items-center justify-center">
                 <img alt="watstreet logo" loading="lazy" decoding="async"
@@ -243,7 +257,7 @@
           </div>
 
           <!-- Heavy Influence -->
-          <div class="card-hover p-4 pb-6 rounded-lg bg-white/5 border border-white/10 hover:border-accent transition-colors max-w-xs mx-auto cursor-pointer animate-element animate-stagger-6" onclick="openModal('heavyinfluence')">
+          <div class="card-hover p-4 pb-6 rounded-lg bg-white/5 border border-white/10 hover:border-accent transition-colors max-w-xs mx-auto cursor-pointer animate-element animate-stagger-7" onclick="openModal('heavyinfluence')">
             <div class="text-center">
               <div class="w-36 h-36 md:w-40 md:h-40 bg-white/10 rounded-lg mx-auto mb-2 p-4 flex items-center justify-center">
                 <img alt="heavy influence logo" loading="lazy" decoding="async"
@@ -252,12 +266,12 @@
               </div>
               <h3 class="font-medium text-base text-gray-200 mb-0.5">heavy influence</h3>
               <p class="text-accent text-sm mb-1">founding engineer</p>
-              <div class="text-gray-300 text-sm">september 2025 - present</div>
+              <div class="text-gray-300 text-sm">september 2025 - december 2025</div>
             </div>
           </div>
 
           <!-- Savi Finance -->
-          <div class="card-hover p-4 pb-6 rounded-lg bg-white/5 border border-white/10 hover:border-accent transition-colors max-w-xs mx-auto cursor-pointer animate-element animate-stagger-7" onclick="openModal('savi')">
+          <div class="card-hover p-4 pb-6 rounded-lg bg-white/5 border border-white/10 hover:border-accent transition-colors max-w-xs mx-auto cursor-pointer animate-element animate-stagger-8" onclick="openModal('savi')">
             <div class="text-center">
               <div class="w-36 h-36 md:w-40 md:h-40 bg-white/10 rounded-lg mx-auto mb-2 p-4 flex items-center justify-center">
                 <img alt="savi finance logo" loading="lazy" decoding="async"
@@ -271,7 +285,7 @@
           </div>
 
           <!-- University of Waterloo -->
-          <div class="card-hover p-4 pb-6 rounded-lg bg-white/5 border border-white/10 hover:border-accent transition-colors max-w-xs mx-auto cursor-pointer animate-element animate-stagger-8" onclick="openModal('waterloo')">
+          <div class="card-hover p-4 pb-6 rounded-lg bg-white/5 border border-white/10 hover:border-accent transition-colors max-w-xs mx-auto cursor-pointer animate-element animate-stagger-9" onclick="openModal('waterloo')">
             <div class="text-center">
             <div class="w-36 h-36 md:w-40 md:h-40 bg-white/10 rounded-lg mx-auto mb-2 p-4 flex items-center justify-center">
               <img alt="university of waterloo logo" loading="lazy" decoding="async"
@@ -289,7 +303,7 @@
           </div>
     
     <!-- Scroll Down Arrow -->
-    <div class="flex justify-center py-12 relative z-50 animate-element animate-stagger-9" style="padding-top: 20pt;">
+    <div class="flex justify-center py-12 relative z-50 animate-element animate-stagger-10" style="padding-top: 20pt;">
       <a href="#next" class="text-center group relative z-50">
         <p class="text-white/50 text-base mb-3 group-hover:text-white/70 transition-colors font-medium">
           <span class="md:hidden">swipe to see more</span>
@@ -357,7 +371,20 @@
         
         let modalData = {};
 
-        if (role === 'watstreet') {
+        if (role === 'hawala') {
+          modalData = {
+            logo: 'assets/hawala.png',
+            company: 'Hawala',
+            title: 'Incoming Winter 2026',
+            period: 'January 2026 - Present',
+            achievements: [
+              'Building financial infrastructure to increase financial access across the Middle East and North Africa',
+              'Developing USD & EUR wallet solutions with US account numbers and European IBANs',
+              'Creating seamless cross-border payment systems supporting 40+ local currency withdrawals'
+            ],
+            website: 'https://usehawala.com/'
+          };
+        } else if (role === 'watstreet') {
           modalData = {
             logo: 'assets/watstreet.png',
             company: 'WatStreet',
